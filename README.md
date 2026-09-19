@@ -10,6 +10,26 @@
 
 A full-featured **Employee & Department Management System** built with ASP.NET Core MVC (.NET 8), Entity Framework Core, and SQL Server — covering CRUD operations, custom middleware, cookies, sessions, validation, and a live statistics dashboard.
 
+## 🗂️ Project History (Labs Covered)
+
+This project was built incrementally as part of ITI training labs:
+
+### Lab 3 — Core CRUD & Validation
+- Employee & Department CRUD (Add / Edit / Delete).
+- ViewModels with Data Annotations (client-side & server-side validation).
+- Custom validation attributes.
+- Entity Framework Core with SQL Server, async database operations.
+
+### Lab 4 — Middleware, Cookies & Sessions
+- Custom middleware: request logging, maintenance mode, request counter, response timer.
+- Cookies: remember user name, theme preference (Light/Dark), search text, page size, last login date.
+- Sessions: visit counter, recently visited departments, login/logout simulation.
+- Employee search with pagination.
+- Statistics Dashboard (async aggregates).
+- Custom error handling page.
+
+> Both labs share the same codebase — this repo represents the **latest, cumulative version** of the app (Lab 4 includes everything from Lab 3).
+
 ## ✨ Features
 
 ### 🧩 Custom Middleware
@@ -80,3 +100,18 @@ cd EmployeeDep
 4. Open the URL shown in the console (e.g. `https://localhost:xxxx`).
 
 ## 📁 Project Structure
+EmployeeDep/
+├── Controllers/ # Home, Employee, Department, Account, Dashboard
+├── Middlewares/ # Request logging, counter, response timer, maintenance
+├── Models/ # EF Core entities + AppDbContext
+├── ViewModels/ # Data-annotated view models
+├── CustomValidationsAttributes/
+├── Views/ # Razor views (Bootstrap-based UI)
+└── Migrations/
+
+## 📌 Notes
+- This project was built as part of an ITI training lab exercise (Middleware, Cookies & Sessions).
+- Login is a simplified session-based simulation (username only, no password/authentication).
+
+## 📄 License
+This project is for educational purposes.
