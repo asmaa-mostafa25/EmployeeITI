@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.WelcomeMessage</h1>
+    <p>You visited this page <strong>@ViewBag.VisitCount</strong> times.</p>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Remember me</h5>
+                <p class="card-text">
+                    Set your name so the Home page can greet you by name next time.
+                </p>
+                <a asp-controller="Home" asp-action="SetUserName" class="btn btn-primary">
+                    Set My Name
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Preferred Theme</h5>
+                <p class="card-text">Choose Light or Dark. Your choice is saved in a cookie.</p>
+                <form asp-controller="Home" asp-action="SetTheme" method="post" class="d-inline">
+                    <button type="submit" name="theme" value="Light" class="btn btn-outline-secondary">Light</button>
+                    <button type="submit" name="theme" value="Dark" class="btn btn-dark">Dark</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

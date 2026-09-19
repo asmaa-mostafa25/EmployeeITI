@@ -1,0 +1,122 @@
+﻿@model EmployeeDep.ViewModels.EmployeeIndexViewModel
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h1>Employees</h1>
+
+<a asp-controller="Employee"
+   asp-action="AddEmployee"
+   class="btn btn-primary">
+    Add Employee
+</a>
+
+<br />
+<br />
+
+<form asp-controller="Employee" asp-action="Index" method="get" class="row g-2 align-items-end mb-3">
+    <div class="col-auto">
+        <label class="form-label mb-0">Search by name</label>
+        <input type="text" name="search" value="@Model.Search" class="form-control" placeholder="Employee name..." />
+    </div>
+    <div class="col-auto">
+        <label class="form-label mb-0">Page size</label>
+        <select name="pageSize" class="form-select" onchange="this.form.submit()">
+            @foreach (var size in new[] { 5, 10, 20 })
+            {
+                <option value="@size" selected="@(Model.PageSize == size)">@size</option>
+            }
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+        <a asp-controller="Employee" asp-action="Index" asp-route-search="" class="btn btn-outline-secondary">
+            Clear
+        </a>
+    </div>
+</form>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Job Title</th>
+            <th>Department Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Age</td>
+                <td>@employee.Salary</td>
+                <td>@employee.JobTitle</td>
+                <td>@employee.DepartmentName</td>
+
+                <td>
+
+                    <a asp-controller="Employee"
+                       asp-action="EditEmployee"
+                       asp-route-id="@employee.Id"
+                       class="btn btn-warning">
+                        Edit
+                    </a>
+
+                    <form asp-controller="Employee"
+                          asp-action="DeleteEmployee"
+                          asp-route-id="@employee.Id"
+                          method="post"
+                          style="display:inline;"
+                          onsubmit="return confirm('Delete this employee?');">
+
+                        <button type="submit" class="btn btn-danger">
+                            Delete
+                        </button>
+
+                    </form>
+
+                </td>
+            </tr>
+        }
+
+        @if (!Model.Employees.Any())
+        {
+            <tr>
+                <td colspan="7" class="text-center">No employees found.</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+@if (Model.TotalPages > 1)
+{
+    <nav>
+        <ul class="pagination">
+            @for (int p = 1; p <= Model.TotalPages; p++)
+            {
+                <li class="page-item @(p == Model.Page ? "active" : "")">
+                    <a class="page-link"
+                       asp-controller="Employee"
+                       asp-action="Index"
+                       asp-route-page="@p"
+                       asp-route-pageSize="@Model.PageSize"
+                       asp-route-search="@Model.Search">
+                        @p
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

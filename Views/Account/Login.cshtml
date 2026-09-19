@@ -1,0 +1,35 @@
+﻿@model EmployeeDep.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+@if (ViewBag.LastLoginDate != null)
+{
+    <div class="alert alert-info">
+        Last login: <strong>@ViewBag.LastLoginDate</strong>
+    </div>
+}
+
+<form asp-controller="Account"
+      asp-action="Login"
+      method="post"
+      class="col-md-4">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName" class="form-control" autofocus />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

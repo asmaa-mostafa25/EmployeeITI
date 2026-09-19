@@ -1,0 +1,30 @@
+﻿@model EmployeeDep.ViewModels.SetUserNameViewModel
+
+@{
+    ViewData["Title"] = "Set My Name";
+}
+
+<h1>Set My Name</h1>
+
+<form asp-controller="Home"
+      asp-action="SetUserName"
+      method="post"
+      class="col-md-4">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName" class="form-control" autofocus />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

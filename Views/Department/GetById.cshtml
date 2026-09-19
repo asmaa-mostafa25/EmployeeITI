@@ -1,0 +1,36 @@
+﻿@model EmployeeDep.Models.Department
+
+@{
+    ViewData["Title"] = "Department Details";
+}
+
+<h1>Department Details</h1>
+
+@if (Model == null)
+{
+    <div class="alert alert-warning">Department not found.</div>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+
+        <dt class="col-sm-3">Department Name</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Manager Name</dt>
+        <dd class="col-sm-9">@Model.ManagerName</dd>
+    </dl>
+
+    <a asp-controller="Department"
+       asp-action="ShowEmployees"
+       asp-route-id="@Model.Id"
+       class="btn btn-info">
+        Show Employees
+    </a>
+}
+
+<a asp-controller="Department" asp-action="Index" class="btn btn-secondary">
+    Back to Departments
+</a>
