@@ -1,14 +1,14 @@
 # 👨‍💼 Employee Management System (ASP.NET Core MVC)
 
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![ASP.NET Core MVC](https://img.shields.io/badge/ASP.NET%20Core-MVC-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![Entity Framework Core](https://img.shields.io/badge/EF%20Core-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Entity Framework Core](https://img.shields.io/badge/EF%20Core-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![jQuery](https://img.shields.io/badge/jQuery-Validation-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 ![License](https://img.shields.io/badge/License-Educational-lightgrey?style=for-the-badge)
 
-A full-featured **Employee & Department Management System** built with ASP.NET Core MVC (.NET 8), Entity Framework Core, and SQL Server — covering CRUD operations, custom middleware, cookies, sessions, validation, and a live statistics dashboard.
+A full-featured **Employee & Department Management System** built with ASP.NET Core MVC (.NET 10), Entity Framework Core, and SQL Server — covering CRUD operations, custom middleware, cookies, sessions, validation, and a live statistics dashboard.
 
 ## 🗂️ Project History (Labs Covered)
 
@@ -71,7 +71,7 @@ This project was built incrementally as part of ITI training labs:
 - Custom friendly error page (`/Home/Error`) via `UseExceptionHandler`.
 
 ## 🛠️ Tech Stack
-- ASP.NET Core MVC (.NET 8)
+- ASP.NET Core MVC (.NET 10)
 - Entity Framework Core (SQL Server)
 - Bootstrap 5
 - jQuery Validation (Unobtrusive)
@@ -79,7 +79,7 @@ This project was built incrementally as part of ITI training labs:
 ## 🚀 Getting Started
 
 ### Prerequisites
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - SQL Server / SQL Server Express
 
 ### Setup
